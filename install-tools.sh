@@ -2,12 +2,13 @@
 
 apt update
 apt upgrade -y
+apt install -y curl
 
 # Install Node 12.x
 curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 apt install -y \
-  curl \
+  git \
   net-tools \
   nmap \
   nodejs \
