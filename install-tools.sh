@@ -15,6 +15,7 @@ apt install -y \
   net-tools \
   nmap \
   nodejs \
+  pylint \
   python3-pip \
   shellcheck \
   thunderbird \
@@ -37,5 +38,8 @@ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add -
 
 apt update
 apt install -y tor deb.torproject.org-keyring
+
+echo 'DNSPort 53
+SocksPort 9050' > /etc/tor/torrc
 
 apt autoremove -y
