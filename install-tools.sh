@@ -14,6 +14,7 @@ apt install -y \
   nmap \
   nodejs \
   python3-pip \
+  shellcheck \
   vim
 
 # Remove Python2 and make Python3 the default
@@ -23,4 +24,4 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-apt -y autoremove
+apt autoremove -y
