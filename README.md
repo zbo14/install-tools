@@ -4,6 +4,8 @@ Install script for stuff I like to use on Ubuntu.
 
 ## Usage
 
-Please read `./install-tools.sh` before running the following command. 
+The following command pipes a script to bash with root privileges 😱
 
-`curl -s https://raw.githubusercontent.com/zbo14/install-tools/master/install-tools.sh | sudo -E bash -`
+Please look at `./install-tools.sh` so you have some idea what's going on!
+
+`wget -qO- https://raw.githubusercontent.com/zbo14/install-tools/master/install-tools.sh | sudo -E bash -`

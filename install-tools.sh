@@ -19,6 +19,7 @@ apt install -y \
   python3-pip \
   shellcheck \
   thunderbird \
+  tmux \
   vim
 
 # Remove Python2 and make Python3 the default
