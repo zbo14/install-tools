@@ -9,12 +9,14 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 apt install -y \
   docker.io \
+  enigmail \
   git \
   net-tools \
   nmap \
   nodejs \
   python3-pip \
   shellcheck \
+  thunderbird \
   vim
 
 # Remove Python2 and make Python3 the default
@@ -23,5 +25,6 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 # Install Docker Compose
 curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
 apt autoremove -y
