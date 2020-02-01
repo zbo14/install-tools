@@ -60,3 +60,7 @@ make -C src
 
 eval "$(rbenv init -)"
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+# Install ruby-build as rbenv plugin
+mkdir -p "$(rbenv root)"/plugins
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
