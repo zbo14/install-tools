@@ -24,7 +24,7 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 # Install pyenv
 rm -rf ~/.pyenv
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash -
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
@@ -35,7 +35,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Install nvm
-curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash -
+curl -o-  https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
@@ -48,3 +48,15 @@ npm install -g npm
 
 # Install tldr-pages
 npm install -g tldr
+
+# Install rbenv
+rm -rf ~/.rbenv
+export PATH="$HOME/.rbenv/bin:/.rbenv/shims:$PATH"
+
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+cd ~/.rbenv
+src/configure
+make -C src
+
+eval "$(rbenv init -)"
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
