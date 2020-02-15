@@ -46,8 +46,10 @@ nvm i 12.14.1
 # Update npm
 npm install -g npm
 
-# Install tldr-pages
-npm install -g tldr
+# Install packages
+npm install -g \
+  dnsdump \
+  tldr
 
 # Install rbenv
 rm -rf ~/.rbenv
@@ -65,7 +67,12 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
+# Install Nikto
+cd
+rm -rf nikto
+git clone https://github.com/sullo/nikto
+
 # Install Sublist3r
 cd
 rm -rf Sublist3r
-git clone https://github.com/aboul3la/Sublist3r.git
+git clone https://github.com/aboul3la/Sublist3r
