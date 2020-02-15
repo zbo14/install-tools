@@ -64,3 +64,8 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 # Install ruby-build as rbenv plugin
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+
+# Install Sublist3r
+cd
+rm -rf Sublist3r
+git clone https://github.com/aboul3la/Sublist3r.git
