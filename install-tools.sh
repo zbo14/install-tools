@@ -14,7 +14,8 @@ sudo apt install -y \
     python3-pip \
     shellcheck \
     tmux \
-    vim
+    vim \
+    xsel
 
 sudo apt autoremove -y
 
@@ -41,7 +42,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Node 12.x LTS
-nvm i 12.14.1
+nvm i 12.16.0
 
 # Update npm
 npm install -g npm
@@ -67,12 +68,8 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-# Install Nikto
+# Install Nikto and Sublist3r
 cd
-rm -rf nikto
+rm -rf nikto Sublist3r
 git clone https://github.com/sullo/nikto
-
-# Install Sublist3r
-cd
-rm -rf Sublist3r
 git clone https://github.com/aboul3la/Sublist3r
