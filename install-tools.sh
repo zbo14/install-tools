@@ -15,7 +15,7 @@ sudo apt install -y \
     shellcheck \
     tmux \
     vim \
-    xsel
+    xclip
 
 sudo apt autoremove -y
 
@@ -50,6 +50,7 @@ npm install -g npm
 # Install packages
 npm install -g \
   dnsdump \
+  http-server \
   tldr
 
 # Install rbenv
