@@ -15,6 +15,7 @@ sudo apt install -y \
     shellcheck \
     tmux \
     vim \
+    whois \
     xclip
 
 sudo apt autoremove -y
