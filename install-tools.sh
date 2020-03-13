@@ -5,6 +5,7 @@ sudo apt upgrade -y
 
 sudo apt install -y \
     curl \
+    dirb \
     docker.io \
     git \
     net-tools \
