@@ -72,10 +72,11 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-# Install Nikto and Sublist3r
+# Install Nikto, sqlmap, and Sublist3r
 cd
-rm -rf nikto Sublist3r
+rm -rf nikto sqlmap Sublist3r
 git clone https://github.com/sullo/nikto
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
 git clone https://github.com/aboul3la/Sublist3r
 
 # Install gobuster
