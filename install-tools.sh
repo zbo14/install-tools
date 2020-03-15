@@ -4,21 +4,21 @@ sudo apt update
 sudo apt upgrade -y
 
 sudo apt install -y \
-    curl \
-    dirb \
-    docker.io \
-    git \
-    net-tools \
-    nmap \
-    p7zip-full \
-    pass \
-    pylint \
-    python3-pip \
-    shellcheck \
-    tmux \
-    vim \
-    whois \
-    xclip
+  curl \
+  dirb \
+  docker.io \
+  git \
+  net-tools \
+  nmap \
+  p7zip-full \
+  pass \
+  pylint \
+  python3-pip \
+  shellcheck \
+  tmux \
+  vim \
+  whois \
+  xclip
 
 sudo apt autoremove -y
 
@@ -45,14 +45,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Node 12.x LTS
-nvm i 12.16.0
+nvm i 12.16.1
 
 # Update npm
 npm install -g npm
 
 # Install packages
 npm install -g \
-  dnsdump \
   http-server \
   tldr
 
