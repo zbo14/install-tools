@@ -12,6 +12,7 @@ sudo apt install -y \
   nmap \
   p7zip-full \
   pass \
+  proxychains \
   pylint \
   python3-pip \
   shellcheck \
