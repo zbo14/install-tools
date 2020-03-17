@@ -8,6 +8,7 @@ sudo apt install -y \
   dirb \
   docker.io \
   git \
+  jq \
   net-tools \
   nmap \
   p7zip-full \
