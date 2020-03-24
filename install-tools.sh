@@ -80,8 +80,5 @@ git clone https://github.com/sullo/nikto
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
 git clone https://github.com/aboul3la/Sublist3r
 
-# Install gobuster
-curl -JLOs https://github.com/OJ/gobuster/releases/download/v3.0.1/gobuster-linux-amd64.7z
-7z x gobuster-linux-amd64.7z
-rm gobuster-linux-amd64.7z
-chmod u+x gobuster-linux-amd64/gobuster
+# Install amass
+sudo snap install amass
