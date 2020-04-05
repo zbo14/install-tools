@@ -54,6 +54,7 @@ npm install -g npm
 
 # Install packages
 npm install -g \
+  dnsdump \
   http-server \
   tldr
 
@@ -73,12 +74,20 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor 
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-# Install Nikto, sqlmap, and Sublist3r
-cd
-rm -rf nikto sqlmap Sublist3r
-git clone https://github.com/sullo/nikto
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
-git clone https://github.com/aboul3la/Sublist3r
+# Install Go
+cd ~/Downloads
+curl -sSLO https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.14.1.linux-amd64.tar.gz
+rm go1.14.1.linux-amd64.tar.gz
 
 # Install amass
 sudo snap install amass
+
+# Install gitrob and gobuster
+go get github.com/michenriksen/gitrob
+go get github.com/OJ/gobuster
+
+# Install sqlmap
+mkdir -p ~/Projects
+cd ~/Projects
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
