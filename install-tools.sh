@@ -8,12 +8,11 @@ sudo apt install -y \
   dirb \
   docker.io \
   git \
+  hashalot \
   jq \
   net-tools \
   nmap \
   p7zip-full \
-  pass \
-  proxychains \
   pylint \
   python3-pip \
   shellcheck \
@@ -47,7 +46,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Node 12.x LTS
-nvm i 12.16.1
+nvm i 12.16.3
 
 # Update npm
 npm install -g npm
@@ -56,6 +55,7 @@ npm install -g npm
 npm install -g \
   dnsdump \
   http-server \
+  retweak \
   tldr
 
 # Install rbenv
@@ -76,9 +76,9 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 
 # Install Go
 cd ~/Downloads
-curl -sSLO https://dl.google.com/go/go1.14.1.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.14.1.linux-amd64.tar.gz
-rm go1.14.1.linux-amd64.tar.gz
+curl -sSLO https://dl.google.com/go/go1.14.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.14.2.linux-amd64.tar.gz
+rm go1.14.2.linux-amd64.tar.gz
 
 # Install amass
 sudo snap install amass
@@ -87,7 +87,9 @@ sudo snap install amass
 go get github.com/michenriksen/gitrob
 go get github.com/OJ/gobuster
 
-# Install sqlmap
+# Install dirsearch, relative-url-extractor, sqlmap
 mkdir -p ~/Projects
 cd ~/Projects
+git clone https://github.com/maurosoria/dirsearch.git
+git clone https://github.com/jobertabma/relative-url-extractor
 git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
