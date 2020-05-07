@@ -8,7 +8,6 @@ sudo apt install -y \
   dirb \
   docker.io \
   git \
-  hashalot \
   jq \
   net-tools \
   nmap \
