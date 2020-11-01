@@ -24,6 +24,9 @@ sudo apt install -y \
 
 sudo apt autoremove -y
 
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Remove Python2 and make Python3 the default
 sudo update-alternatives --remove python /usr/bin/python2
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
@@ -46,14 +49,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# Install Node 12.x LTS
+# Install Node 12.x LTS as default
 nvm i 12.19.0
+nvm alias default 12.19.0
 
-# Update npm
-npm install -g npm
-
-# Install packages
-npm install -g tldr
+# Update npm and install packages
+npm i -g npm tldr
 
 # Install rbenv
 rm -rf ~/.rbenv
@@ -64,36 +65,34 @@ cd ~/.rbenv
 src/configure
 make -C src
 eval "$(rbenv init -)"
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 
 # Install ruby-build as rbenv plugin
 mkdir -p "$(rbenv root)"/plugins
 git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 
-# Install Go
-cd ~/Downloads
-curl -sSLO https://dl.google.com/go/go1.15.3.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.15.3.linux-amd64.tar.gz
-rm go1.15.3.linux-amd64.tar.gz
+# Run rbenv doctor
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+
+# Install goenv
+rm -rf ~/.goenv
+export PATH="$HOME/.goenv/bin:$PATH"
+
+git clone https://github.com/syndbg/goenv.git ~/.goenv
+eval "$(goenv init -)"
+
+# Install latest version of Go
+goenv install 1.15.3
+goenv global 1.15.3
 
 # Install amass
 sudo snap install amass
 
-# Install gitrob and gobuster
-go get github.com/michenriksen/gitrob
-go get github.com/OJ/gobuster
+# Install ffuf and subfinder
+go get -u -v github.com/ffuf/ffuf
+GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
 
 mkdir -p ~/Projects
 cd ~/Projects
 
 # Install dirsearch
 git clone https://github.com/maurosoria/dirsearch.git
-
-# Install masscan
-git clone https://github.com/robertdavidgraham/masscan
-cd masscan
-make -j
-
-# Install relative-url-extractor and sqlmap
-git clone https://github.com/jobertabma/relative-url-extractor
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
