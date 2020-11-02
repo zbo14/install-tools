@@ -24,8 +24,14 @@ sudo apt install -y \
 
 sudo apt autoremove -y
 
-# Install Oh My Zsh
+# Download tmux plugins
+rm -rf ~/.tmux
+mkdir ~/.tmux ~/.tmux/plugins
+git clone --quiet https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Install Oh My Zsh and powerlevel10k theme
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
 
 # Remove Python2 and make Python3 the default
 sudo update-alternatives --remove python /usr/bin/python2
