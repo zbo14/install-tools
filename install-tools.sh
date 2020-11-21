@@ -7,11 +7,14 @@ sudo apt install -y \
   curl \
   dirb \
   docker.io \
+  esmtp \
   git \
   hping3 \
   jq \
+  mutt \
   net-tools \
   nmap \
+  pass \
   p7zip-full \
   pylint \
   python3-pip \
@@ -56,8 +59,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Install Node 12.x LTS as default
-nvm i 12.19.0
-nvm alias default 12.19.0
+nvm i 14.15.1
+nvm alias default 14.15.1
 
 # Update npm and install packages
 npm i -g npm tldr
