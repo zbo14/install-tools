@@ -19,6 +19,7 @@ sudo apt install -y \
   pylint \
   python3-pip \
   shellcheck \
+  socat \
   tmux \
   vim \
   whois \
