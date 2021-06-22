@@ -75,6 +75,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Install snaps
 sudo snap install amass
+sudo snap install slack
+sudo snap install sublime-text
 
 mkdir -p ~/Projects
 cd ~/Projects
