@@ -4,6 +4,7 @@ sudo apt update
 sudo apt upgrade -y
 
 sudo apt install -y \
+  cheese \
   curl \
   dirb \
   docker.io \
@@ -17,6 +18,7 @@ sudo apt install -y \
   nmap \
   pass \
   p7zip-full \
+  pv \
   pylint \
   python3-pip \
   shellcheck \
@@ -49,12 +51,9 @@ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-# Install amass
+# Install snaps
 sudo snap install amass
-
-# Install ffuf and subfinder
-go get -u -v github.com/ffuf/ffuf
-GO111MODULE=on go get -u -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+sudo snap install sublime-text
 
 mkdir -p ~/Projects
 cd ~/Projects
